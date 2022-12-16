@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> V-On</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js"></script>
+    </head>
+    <body>
+        <div  id="app">
+            <p>{{msg}}</p>
+            <button v-on:click="reveal">Random Number</button>
+            <button @click="Reverse"> Reverse Message</button>
+        </div>
+        <script>
+            new Vue({
+                el:"#app",
+                data:{
+                    msg:"Hello Jay",
+                    Num:Math.floor(Math.random()*100)
+                },
+                methods:{
+                    Reverse(){
+                        this.msg=this.msg.split('').reverse().join('')
+                    },
+                    reveal(){
+                        alert(`num:${this.Num}`)
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
